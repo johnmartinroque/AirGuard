@@ -9,6 +9,8 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const adminRoutes = require("./routes/adminRoutes");
+
 // Middleware
 app.use(cors());
 app.use(express.json()); // For parsing application/json
@@ -30,6 +32,8 @@ app.use(express.json()); // For parsing application/json
 app.get("/", (req, res) => {
   res.send("Hello from the server!!!!");
 });
+
+app.use("/api/admin", adminRoutes);
 
 // Serve React app in production
 if (process.env.NODE_ENV === "production") {

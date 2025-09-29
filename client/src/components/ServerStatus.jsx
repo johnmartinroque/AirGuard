@@ -11,7 +11,7 @@ const ServerStatus = () => {
         setStatus(data.message);
       })
       .catch((err) => {
-        setError("Failed to fetch admin status");
+        setError("Failed to fetch server status");
       });
   }, []);
 
